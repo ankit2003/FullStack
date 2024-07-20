@@ -1,46 +1,49 @@
+import React, { useState } from "react";
+import styles from "./Login.module.css"; // Import the CSS Module
+
 const Login = () => {
   return (
-    <>
-      <form>
+    <div className={styles.container}>
+      <form className={styles.form}>
         <div className="mb-3">
-          <label for="exampleInputEmail1" className="form-label">
+          <label htmlFor="exampleInputEmail1" className={styles.label}>
             Email address
           </label>
           <input
             type="email"
-            className="form-control"
+            className={styles.input}
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" className="form-text">
+          <div id="emailHelp" className={styles["form-text"]}>
             We'll never share your email with anyone else.
           </div>
         </div>
         <div className="mb-3">
-          <label for="exampleInputPassword1" className="form-label">
+          <label htmlFor="exampleInputPassword1" className={styles.label}>
             Password
           </label>
           <input
             type="password"
-            className="form-control"
+            className={styles.input}
             id="exampleInputPassword1"
           />
         </div>
         <div className="mb-3 form-check">
           <input
             type="checkbox"
-            className="form-check-input"
+            className={styles["form-check-input"]}
             id="exampleCheck1"
           />
-          <label className="form-check-label" for="exampleCheck1">
+          <label className={styles["form-check-label"]} htmlFor="exampleCheck1">
             Check me out
           </label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className={styles.button}>
           Submit
         </button>
       </form>
-    </>
+    </div>
   );
 };
 

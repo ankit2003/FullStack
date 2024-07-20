@@ -1,6 +1,5 @@
-// SignUp.js
-
 import React, { useState } from "react";
+import styles from "./Signup.module.css"; // Import the CSS Module
 
 function SignUp() {
   const [image, setImage] = useState(null);
@@ -17,47 +16,49 @@ function SignUp() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="mb-3">
-        <label htmlFor="email" className="form-label">
-          Email address
-        </label>
-        <input
-          type="email"
-          className="form-control"
-          id="email"
-          placeholder="Enter email"
-        />
-      </div>
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <div className="mb-3">
+          <label htmlFor="email" className={styles.label}>
+            Email address
+          </label>
+          <input
+            type="email"
+            className={styles.input}
+            id="email"
+            placeholder="Enter email"
+          />
+        </div>
 
-      <div className="mb-3">
-        <label htmlFor="password" className="form-label">
-          Password
-        </label>
-        <input
-          type="password"
-          className="form-control"
-          id="password"
-          placeholder="Password"
-        />
-      </div>
+        <div className="mb-3">
+          <label htmlFor="password" className={styles.label}>
+            Password
+          </label>
+          <input
+            type="password"
+            className={styles.input}
+            id="password"
+            placeholder="Password"
+          />
+        </div>
 
-      <div className="mb-3">
-        <label htmlFor="profileImage" className="form-label">
-          Upload Profile Image
-        </label>
-        <input
-          type="file"
-          className="form-control"
-          id="profileImage"
-          onChange={handleImageUpload}
-        />
-      </div>
+        <div className="mb-3">
+          <label htmlFor="profileImage" className={styles.label}>
+            Upload Profile Image
+          </label>
+          <input
+            type="file"
+            className={styles.input}
+            id="profileImage"
+            onChange={handleImageUpload}
+          />
+        </div>
 
-      <button type="submit" className="btn btn-primary">
-        Sign Up
-      </button>
-    </form>
+        <button type="submit" className={styles.button}>
+          Sign Up
+        </button>
+      </form>
+    </div>
   );
 }
 
