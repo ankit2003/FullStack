@@ -1,21 +1,22 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import styles from "./Navigation.module.css"; // Import the CSS Module
 
 function Navigation() {
   return (
     <>
-      <nav className="nav">
-        <Link className="nav-link active" to="/"></Link>
-        <Link className="nav-link " to="Home">
+      <nav className={styles.nav}>
+        <Link className={`${styles.navLink} ${styles.active}`} to="/Home">
           Home
         </Link>
-        <Link className="nav-link " to="Login">
+        <Link className={styles.navLink} to="/login">
           Login
         </Link>
-        <Link className="nav-link " to="Signup">
+        <Link className={styles.navLink} to="/signup">
           Signup
         </Link>
       </nav>
+      <Outlet />
     </>
   );
 }
